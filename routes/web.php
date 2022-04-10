@@ -21,8 +21,11 @@ Route::get('/', function () {
 Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->name('kardex');
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
 
-Route::get('/inicio', function () {
-    return "ok";
+Route::get('/esperaRevReq', function () {
+    return view('esperaRevReq');
+});
+Route::get('/newConcurso', function () {
+    return view('newConcurso');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
