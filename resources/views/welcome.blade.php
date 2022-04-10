@@ -34,6 +34,7 @@
                         @endif
                     @endauth
                     <a href="{{ url('/kardex') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Kardex</a>
+                    <a href="{{ url('/esperaRevisionRequisitos') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Espera</a>
                 </div>
             @endif
 

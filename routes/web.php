@@ -24,6 +24,12 @@ Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->na
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
 Route::get('/descargar', [App\Http\Controllers\PdfController::class, 'descargar'])->name('descargar');
 
+Route::get('/esperaRevReq', function () {
+    return view('esperaRevReq');
+});
+Route::get('/newConcurso', function () {
+    return view('newConcurso');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

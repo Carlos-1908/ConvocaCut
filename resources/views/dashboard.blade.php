@@ -2,6 +2,8 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
+            <a href="{{ url('/esperaRevReq') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Espera</a>
+            <a href="{{ url('/newConcurso') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">nuevo concurso</a>
         </h2>
     </x-slot>
 
