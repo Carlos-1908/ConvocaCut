@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->name('kardex');
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
 
