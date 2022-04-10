@@ -24,6 +24,6 @@ class PdfController extends Controller
                 dd("NO ES UN PDF");
             }
         }
-        return "ok";
+        return 'ok';
     }
 }
