@@ -23,16 +23,23 @@ Route::get('/espera', function () {
 Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->name('kardex');
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
 Route::get('/descargar', [App\Http\Controllers\PdfController::class, 'descargar'])->name('descargar');
+Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth']);
 
 Route::get('/esperaRevReq', function () {
     return view('esperaRevReq');
 });
-Route::get('/newConcurso', function () {
-    return view('newConcurso');
-});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
