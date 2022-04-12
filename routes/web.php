@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('guest');
 
 
 Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->name('kardex');
