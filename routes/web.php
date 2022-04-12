@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
-Route::get('/espera', function () {
-    return view('esperaKardex');
-});
+
 
 Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->name('kardex');
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
@@ -29,6 +27,10 @@ Route::get('/esperaRevReq', function () {
     return view('esperaRevReq');
 });
 
+
+Route::get('/inicio', function () {
+    return "ok";
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
