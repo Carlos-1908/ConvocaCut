@@ -33,8 +33,10 @@
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
                         <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
+                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
                     </ul>
                     @endif
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
