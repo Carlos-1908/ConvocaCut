@@ -52,9 +52,6 @@
                         <a class="nav-link" href="{{ url('/kardex') }}">{{ __('Kardex') }}</a>
                     </ul>
                     @endif
-                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
-                    </ul>
-                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

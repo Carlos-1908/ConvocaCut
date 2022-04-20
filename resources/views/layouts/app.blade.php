@@ -33,7 +33,6 @@
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
                         <a class="nav-link" href="{{ url('/kardex') }}">{{ __('Kardex') }}</a>
-                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
                     </ul>
                     @endif
 
