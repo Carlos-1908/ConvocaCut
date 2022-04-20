@@ -31,9 +31,13 @@
                     <!-- Left Side Of Navbar -->
                     @if (auth::check())
                     <ul class="navbar-nav me-auto">
-                        <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                        <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
-                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                        @if(Auth::user()->rol == "profe")
+                            <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
+                        @endif
+                        @if(Auth::user()->rol != "profe")
+                            <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
+                            <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                        @endif
                     </ul>
                     @endif
 
