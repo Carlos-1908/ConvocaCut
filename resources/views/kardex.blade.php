@@ -7,32 +7,202 @@
         <title>kardex</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <script type="text/javascript">
+            function toggle(elemento) {
+            if(elemento.value=="3") {
+                document.getElementById("form4").style.display = "none";
+                document.getElementById("form5").style.display = "none";
+            }else{
+                if(elemento.value=="4"){
+                    document.getElementById("form4").style.display = "block";
+                    document.getElementById("form5").style.display = "none";
+                }else{
+                    if(elemento.value=="5"){
+                            document.getElementById("form4").style.display = "block";
+                            document.getElementById("form5").style.display = "block";
+                        }  
+                    }
+                }
             }
-        </style>
+        </script>
     </head>
     <body class="antialiased">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    @if (auth::check())
+                    <ul class="navbar-nav me-auto">
+                        <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
+                        <a class="nav-link" href="{{ url('/kardex') }}">{{ __('Kardex') }}</a>
+                    </ul>
+                    @endif
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Cerrar sesion') }}
+                                    </a>
+ 
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
         <p>Antes de capturar los datos, te invitamos a descargar la carta compromiso la cual es un requisito 
         para poder participar, por lo cual podrás descargar en el siguiente botón.</p>
         <a download="CARTA COMPROMISO.pdf" href="{{ route('descargar') }}">Descargar carta compromiso</a>
         <p>Es indispensable que la carta compromiso este firmada por los participantes y sea escaneada junto con los 
         kardex de cada participante en un único archivo PDF.</p>
 
-        <form action="/guardar"  method="post" enctype="multipart/form-data">
+        <form action="/guardar"  method="post" role="form" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <label for="Kardex">A continuación, se deberá anexar la carta compromiso del equipo y el kardex de 
-            cada uno de los integrantes del equipo en un único archivo PDF:<br></label> 
-            <input type="file" name="Kardex" required><br>
-            <input type="submit" value="subir">
+            <h3>Datos del equipo</h3>
+            <h4>Numero de integrantes</h4>
+            
+            <div class="campo-radio">
+                <input type="radio" name="num_Integrantes" value="3"  onclick="toggle(this)" checked>
+                <label for="i3">3</label>
+            </div>
+
+            <div class="campo-radio">
+                <input type="radio" name="num_Integrantes" value="4"  onclick="toggle(this)">
+                <label for="i4">4</label>
+            </div>
+
+            <div class="campo-radio">
+                <input type="radio" name="num_Integrantes" value="5"  onclick="toggle(this)">
+                <label for="i5">5</label>
+            </div>
+
+            <div class="form-group row">
+                <label for="rep" class="col-sm-2 col-form-label">Representante del equipo</label>
+                <div class="col-sm-5">
+                    <input name="nombre1" type="text" class="form-control" placeholder="Nombre completo" required>
+                    <input name="codigo1" type="text" class="form-control" placeholder="Codigo" required>
+                    <input name="semestre1" type="text" class="form-control" placeholder="Semestre" required>
+                    <input name="carrera1" type="text" class="form-control" placeholder="Carrera" required>
+                    <input name="cu1" type="text" class="form-control" placeholder="Centro universitario" required>
+                    <input name="telefono1" type="text" class="form-control"placeholder="Telefono" required>
+                    <!--<textarea name="nombres_equipo" rows="4" cols="79" placeholder="Nombres de integrantes"></textarea>-->
+                </div>
+            </div><br>
+
+            <div class="form-group row">
+                <label for="i2" class="col-sm-2 col-form-label">Integrante 2</label>
+                <div class="col-sm-5">
+                    <input name="nombre2" type="text" class="form-control" placeholder="Nombre completo" required>
+                    <input name="codigo2" type="text" class="form-control" placeholder="Codigo" required>
+                    <input name="semestre2" type="text" class="form-control" placeholder="Semestre" required>
+                    <input name="carrera2" type="text" class="form-control" placeholder="Carrera" required>
+                    <input name="cu2" type="text" class="form-control" placeholder="Centro universitario" required>
+                    <input name="telefono2" type="text" class="form-control"placeholder="Telefono" required>
+                </div>
+            </div><br>
+
+            <div class="form-group row">
+                <label for="i3" class="col-sm-2 col-form-label">Integrante 3</label>
+                <div class="col-sm-5">
+                    <input name="nombre3" type="text" class="form-control" placeholder="Nombre completo" required>
+                    <input name="codigo3" type="text" class="form-control" placeholder="Codigo" required>
+                    <input name="semestre3" type="text" class="form-control" placeholder="Semestre" required>
+                    <input name="carrera3" type="text" class="form-control" placeholder="Carrera" required>
+                    <input name="cu3" type="text" class="form-control" placeholder="Centro universitario" required>
+                    <input name="telefono3" type="text" class="form-control"placeholder="Telefono" required>
+                </div>
+            </div><br>
+
+
+            <div id="form4" style="display:none">
+                <div class="form-group row">
+                    <label for="i4" class="col-sm-2 col-form-label">Integrante 4</label>
+                    <div class="col-sm-5">
+                        <input name="nombre4" type="text" class="form-control" placeholder="Nombre completo">
+                        <input name="codigo4" type="text" class="form-control" placeholder="Codigo">
+                        <input name="semestre4" type="text" class="form-control" placeholder="Semestre">
+                        <input name="carrera4" type="text" class="form-control" placeholder="Carrera">
+                        <input name="cu4" type="text" class="form-control" placeholder="Centro universitario">
+                        <input name="telefono4" type="text" class="form-control"placeholder="Telefono">  
+                    </div>
+                </div>
+            </div><br>
+
+
+            <div id="form5" style="display:none">
+                <div class="form-group row">
+                    <label for="i5" class="col-sm-2 col-form-label">Integrante 5</label>
+                    <div class="col-sm-5">
+                        <input name="nombre5" type="text" class="form-control" placeholder="Nombre completo">
+                        <input name="codigo5" type="text" class="form-control" placeholder="Codigo">
+                        <input name="semestre5" type="text" class="form-control" placeholder="Semestre">
+                        <input name="carrera5" type="text" class="form-control" placeholder="Carrera">
+                        <input name="cu5" type="text" class="form-control" placeholder="Centro universitario">
+                        <input name="telefono5" type="text" class="form-control"placeholder="Telefono">
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="kardex">
+                <label for="Kardex">A continuación, se deberá anexar la carta compromiso del equipo y el kardex de 
+                cada uno de los integrantes del equipo en un único archivo PDF:<br></label> 
+                <input type="file" name="Kardex" required><br>
+            </div><br>
+
+            <input type="submit" value="Enviar datos">
+            <input type="reset" value="Borrar datos">
         </form>
+
+        <!--<form action="/guardar"  method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="kardex">
+                <label for="Kardex">A continuación, se deberá anexar la carta compromiso del equipo y el kardex de 
+                cada uno de los integrantes del equipo en un único archivo PDF:<br></label> 
+                <input type="file" name="Kardex" required><br>
+            </div><br>
+            <input type="submit" value="Subir">
+        </form>-->
+        
     </body>
 </html>
