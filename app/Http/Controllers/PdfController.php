@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Integrantes;
+
 
 class PdfController extends Controller
 {
-    public function kardex(){
+    public function kardex(){ 
         return view('kardex');
     }
 
     public function mguardar(Request $request){
+        //dd($request->all());
+        Integrantes::create($request->all());
         if($request->hasFile("Kardex")){
             $file=$request->file("Kardex");
             
