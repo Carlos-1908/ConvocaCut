@@ -52,6 +52,10 @@
                         <a class="nav-link" href="{{ url('/kardex') }}">{{ __('Kardex') }}</a>
                     </ul>
                     @endif
+                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                    </ul>
+                    @endif
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -59,12 +63,14 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -80,6 +86,9 @@
                                         {{ __('Cerrar sesion') }}
                                     </a>
  
+                                        {{ __('Logout') }}
+                                    </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

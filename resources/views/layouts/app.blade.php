@@ -33,8 +33,10 @@
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
                         <a class="nav-link" href="{{ url('/kardex') }}">{{ __('Kardex') }}</a>
+                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
                     </ul>
                     @endif
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -55,17 +57,24 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
+                        
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if(Auth::user()->rol == "profe")
+                                    <a class="dropdown-item" href="{{route('dashboardP')}}">Administrador</a>
+                                    @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar sesion') }}
                                     </a>
  
+                                   
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    
                                 </div>
                             </li>
                         @endguest

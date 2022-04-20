@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.template')
 
+<<<<<<< HEAD
+=======
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -131,3 +129,4 @@
         </div>
     </body>
 </html>
+>>>>>>> 3900dee73b656f0ef2373f662ca0f7a3dc2c459a
