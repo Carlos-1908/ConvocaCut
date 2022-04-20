@@ -22,6 +22,7 @@ Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->na
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
 Route::get('/descargar', [App\Http\Controllers\PdfController::class, 'descargar'])->name('descargar');
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth']);
+Route::resource('/requisitos', App\Http\Controllers\RequisitoController::class)->middleware(['auth']);
 
 Route::get('/esperaRevReq', function () {
     return view('esperaRevReq');
