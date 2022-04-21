@@ -29,10 +29,10 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    @if (auth::check())
-                    <ul class="navbar-nav me-auto">
-                        <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                    </ul>
+                    @if (auth::check()&&Auth::user()->rol!=0)
+                        <ul class="navbar-nav me-auto">
+                            <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
+                        </ul>
                     @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -56,7 +56,7 @@
                                 </a>
                         
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    @if(Auth::user()->rol == "profe")
+                                    @if(Auth::user()->rol == 1)
                                     <a class="dropdown-item" href="{{route('dashboardP')}}">Administrador</a>
                                     @endif
 
