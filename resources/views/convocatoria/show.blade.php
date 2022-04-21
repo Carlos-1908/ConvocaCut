@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Convocatoria</span>
+                            <span class="card-title">Mostrar convocatorias</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('convocatorias.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('convocatorias.index') }}"> Regresar</a>
                         </div>
                     </div>
 
@@ -33,20 +33,36 @@
                             {{ $convocatoria->departamento }}
                         </div>
                         <div class="form-group">
-                            <strong>Email:</strong>
-                            {{ $convocatoria->email }}
+                            <strong>Email Dudas:</strong>
+                            {{ $convocatoria->email_Dudas }}
                         </div>
                         <div class="form-group">
-                            <strong>Telefono:</strong>
-                            {{ $convocatoria->telefono }}
+                            <strong>Telefono Dudas:</strong>
+                            {{ $convocatoria->telefono_Dudas }}
                         </div>
                         <div class="form-group">
-                            <strong>Inicio:</strong>
-                            {{ $convocatoria->inicio }}
+                            <strong>Requisitos:</strong>
+                            {{ $convocatoria->requisitos }}
                         </div>
                         <div class="form-group">
-                            <strong>Fin:</strong>
-                            {{ $convocatoria->fin }}
+                            <strong>Fecha De Registro:</strong>
+                            {{ $convocatoria->fecha_de_Registro }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha De Revision:</strong>
+                            {{ $convocatoria->fecha_de_Revision }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha De Emision De Constancias:</strong>
+                            {{ $convocatoria->fecha_de_Emision_de_Constancias }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha De Envio De Proyecto:</strong>
+                            {{ $convocatoria->fecha_de_Envio_de_Proyecto }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha De Publicacion De Resutados:</strong>
+                            {{ $convocatoria->fecha_de_Publicacion_de_Resutados }}
                         </div>
 
                     </div>
