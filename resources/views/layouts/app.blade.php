@@ -29,12 +29,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    @if (auth::check()&&Auth::user()->rol!=0)
-                    <ul class="navbar-nav me-auto">
-                            <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                            <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
-                            <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
-                    </ul>
+                    @if (auth::check() && Auth::user()->rol==1)
+                        
+                        <ul class="navbar-nav me-auto">
+                                <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
+                                <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
+                                <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                                <a class="nav-link" href="{{route('Streaming')}}">Streaming</a>
+                        </ul>
                     @endif
 
                     <!-- Right Side Of Navbar -->

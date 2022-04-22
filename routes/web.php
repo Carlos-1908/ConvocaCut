@@ -30,6 +30,7 @@ Route::get('/descargar', [App\Http\Controllers\PdfController::class, 'descargar'
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth']);
 Route::resource('/requisitos', App\Http\Controllers\RequisitoController::class)->middleware(['auth']);
 
+Route::view('/Streaming', 'Streaming')->name('Streaming');
 
 Route::get('/esperaRevReq', function () {
     return view('esperaRevReq');
