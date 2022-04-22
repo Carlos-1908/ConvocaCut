@@ -29,16 +29,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
                     @if (auth::check() && Auth::user()->rol==1)
-                        
-                        <ul class="navbar-nav me-auto">
                                 <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                                <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
-                                <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
                                 <a class="nav-link" href="{{route('Streaming')}}">Streaming</a>
-                        </ul>
+                        
                     @endif
-
+                    
+                    <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
+                    <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
