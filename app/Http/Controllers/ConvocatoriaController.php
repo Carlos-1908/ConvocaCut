@@ -48,7 +48,7 @@ class ConvocatoriaController extends Controller
         $convocatoria = Convocatoria::create($request->all());
 
         return redirect()->route('convocatorias.index')
-            ->with('success', 'Convocatoria created successfully.');
+            ->with('success', 'Convocatoria creada correctamente');
     }
 
     /**
@@ -91,7 +91,7 @@ class ConvocatoriaController extends Controller
         $convocatoria->update($request->all());
 
         return redirect()->route('convocatorias.index')
-            ->with('success', 'Convocatoria updated successfully');
+            ->with('success', 'Convocatoria actualizada correctamente');
     }
 
     /**
@@ -104,6 +104,6 @@ class ConvocatoriaController extends Controller
         $convocatoria = Convocatoria::find($id)->delete();
 
         return redirect()->route('convocatorias.index')
-            ->with('success', 'Convocatoria deleted successfully');
+            ->with('success', 'Convocatoria eliminada correctamente');
     }
 }

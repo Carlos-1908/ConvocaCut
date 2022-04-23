@@ -36,7 +36,8 @@
                            <td>{{$Convoc->fecha_de_Revision}}</td>
                            <td>{{$Convoc->fecha_de_Emision_de_Constancias}}</td>
                            <td>{{$Convoc->fecha_de_Envio_de_Proyecto}}</td>
-                           <td>{{$Convoc->fecha_de_Publicacion_de_Resutados}}</td>                     
+                           <td>{{$Convoc->fecha_de_Publicacion_de_Resutados}}</td>
+                           <td><a class="btn btn-primary" href="{{ route('kardex') }}">{{ __('Registrarse') }}</a> </td>                      
                            </tr>
                            @endforeach
                        </tbody>

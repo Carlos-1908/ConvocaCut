@@ -15,6 +15,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <link rel="icon" type="image/x-icon" href="assets/diamond-half.svg" />
     </head>
     <body class="font-sans antialiased">
     <div id="app">
@@ -37,7 +38,7 @@
                         @endif
                         @if(Auth::user()->rol != "profe")
                             <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
-                            <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                            <a class="nav-link" href="{{ route('kardex') }}">{{ __('Subir documentos') }}</a>
                         @endif
 
                     </ul>

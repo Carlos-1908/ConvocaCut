@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Integrantes;
 
-
 class PdfController extends Controller
 {
     public function kardex(){ 
@@ -14,22 +13,26 @@ class PdfController extends Controller
 
     public function mguardar(Request $request){
         //dd($request->all());
-        Integrantes::create($request->all());
-        if($request->hasFile("Kardex")){
+
+        request()->validate(Integrantes::$rules);
+
+        if($request->hasfile("Kardex")){
             $file=$request->file("Kardex");
             
-            $nombre = time()."_".$file->getClientOriginalName();
-            /*$nombre = "pdf_".time().".".$file->guessExtension();*/
+            $nombre = $file->getClientOriginalName();
 
             $ruta = public_path("archivosKardex/".$nombre);
 
             if($file->guessExtension()=="pdf"){
                 copy($file, $ruta);
+                Integrantes::create($request->all());
             }else{
-                dd("NO ES UN PDF");
+                return redirect()->route('kardex')
+                    ->with('warning', 'El archivo debe ser pdf');
             }
-        }
-        return 'ok';
+        }  
+        return redirect()->route('kardex')
+            ->with('success', 'Se han enviado los datos');   
     }
 
     public function descargar(){
