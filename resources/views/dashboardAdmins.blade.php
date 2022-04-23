@@ -1,5 +1,5 @@
 <x-app-layout>
-    @if(Auth::user()->rol!="profe")
+    @if(Auth::user()->rol!=1)
     {{header ("refresh:0;url=dashboard");}}
     @endif
     <x-slot name="header">

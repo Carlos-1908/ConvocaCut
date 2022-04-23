@@ -30,8 +30,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    @if (auth::check())
                     <ul class="navbar-nav me-auto">
+<<<<<<< HEAD
 
                         @if(Auth::user()->rol == "profe")
                             <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
@@ -42,8 +42,17 @@
                         @endif
 
                     </ul>
+=======
+                    @if (auth::check() && Auth::user()->rol==1)
+                                <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
+                                <a class="nav-link" href="{{route('Streaming')}}">Streaming</a>
+                        
+>>>>>>> f65b9d69c9f07f4ff61f4fc847f2c3246de5a18d
                     @endif
-
+                    
+                    <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
+                    <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -66,7 +75,7 @@
                                 </a>
                         
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    @if(Auth::user()->rol == "profe")
+                                    @if(Auth::user()->rol == 1)
                                     <a class="dropdown-item" href="{{route('dashboardP')}}">Administrador</a>
                                     @endif
 
