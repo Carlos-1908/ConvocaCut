@@ -32,13 +32,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                     @if (auth::check() && Auth::user()->rol==1)
-                                <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                               
-                        
+                        <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
+                    @endif
+                    @if (auth::check() && Auth::user()->rol==0)
+                        <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
+                        <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
                     @endif
                     
-                    <a class="nav-link" href="{{ route('requisitos.index') }}">{{ __('Registrarte a Convocatoria') }}</a>
-                    <a class="nav-link" href="{{ route('kardex') }}">{{ __('Kardex') }}</a>
+                    
                 </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
