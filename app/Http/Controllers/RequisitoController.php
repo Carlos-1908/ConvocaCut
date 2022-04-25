@@ -53,7 +53,7 @@ class RequisitoController extends Controller
 
         $requisito = Requisito::create($request->all());
 
-        return redirect()->route('requisitos.index')
+        return redirect()->route('home1')
             ->with('success', 'Requisito created successfully.');
     }
 

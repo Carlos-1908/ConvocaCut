@@ -28,7 +28,7 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
-                                    <tr>
+                                    <!-- <tr>
 
 										<th>Convocatoria</th>
 										<th>Descripcion</th>
@@ -37,10 +37,20 @@
 										<th>Fin de Registro</th>
 
                                         <th></th>
-                                    </tr>
+                                    </tr> -->
                                 </thead>
                                 <tbody>
-                                    @foreach ($requisitos as $requisito)
+                                    <!-- <form>
+                                        <label class="col-sm-2 col-form-label">Convocatoria</label>
+                                        <input name="convocatoria" type="text" class="form-control" placeholder="Convocatoria" value="{{old('Convocatoria')}}">
+                                        <label class="col-sm-2 col-form-label">Usuario</label>
+                                        <label name="usuario" class="form-control">{{ Auth::user()->name }}</label>
+                                        <label class="col-sm-2 col-form-label">Requisitos</label>
+                                        <input name="requisitos" type="textbox" class="form-control" placeholder="Convocatoria" value="{{old('Convocatoria')}}"><br><br>
+                                        <a class="btn btn-sm btn-success" type="submit" ><i class="fa fa-fw fa-edit"></i> Enviar Requisitos</a>
+                                    </form> -->
+                                    
+                                    <!-- @foreach ($requisitos as $requisito)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
@@ -55,7 +65,7 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach -->
                                 </tbody>
                             </table>
                         </div>
