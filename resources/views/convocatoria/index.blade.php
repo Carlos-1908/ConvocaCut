@@ -1,7 +1,5 @@
 @extends('layouts.app')
-@if(Auth::user()->rol !=1)
-{{header ("refresh:0;url=home1");}}
-@endif
+
 @section('template_title')
     Convocatoria
 @endsection
