@@ -38,9 +38,7 @@ Route::get('/esperaRevReq', function () {
 
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth', 'verified']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\ConvocasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 require __DIR__.'/auth.php';
