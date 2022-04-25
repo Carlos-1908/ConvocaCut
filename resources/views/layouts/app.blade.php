@@ -33,7 +33,7 @@
                     <ul class="navbar-nav me-auto">
                     @if (auth::check() && Auth::user()->rol==1)
                                 <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                                <a class="nav-link" href="{{route('Streaming')}}">Streaming</a>
+                               
                         
                     @endif
                     
