@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Scrolling Nav - Start Bootstrap Template</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <title>ConvocaCUT</title>
+        <link rel="icon" type="image/x-icon" href="assets/diamond-half.svg" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -32,7 +32,7 @@
         <!-- Header-->
         <header class="bg-primary bg-gradient text-white">
             <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Convoca Cut</h1>
+                <h1 class="fw-bolder">ConvocaCut</h1>
                 <p class="lead">El Departamento de Emprendimiento, Comercio y Empresa a través del CReCE Tonalá invita a las y los estudiantes de pregrado del CUTonalá a inscribir proyectos de emprendimiento para ser incubados e impulsar su desarrollo por medio de un curso y asesorías empresariales como parte del proceso de incubación.</p>
                 <a class="btn btn-lg btn-light" href="{{ route('home1') }}"> Ver convocatorias</a>
             </div>
@@ -65,7 +65,7 @@
             </div>
         </section>
         -->
-        <!-- Contact section-->
+        <!-- Contact section
         <section id="contact">
             <div class="container px-6">
                     <div class="col-lg-8">
@@ -76,10 +76,15 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Universidad de Gudalajara 2022</p></div>
+            <div class="container px-4">
+                <p class="text-center text-white">CENTRO UNIVERSITARIO DE TONALÁ</p>
+                <p class="text-center text-white">Campus CUTonalá Av. Nuevo Periférico No. 555 Ejido San José Tateposco, C.P. 45425, Tonalá Jalisco, México</p>
+                <p class="text-center text-white">Teléfono: +52 (33) 20 00 23 00 Ext. 64007 y 64044</p><br>
+                <p class="m-0 text-center text-white">Copyright &copy; Universidad de Gudalajara 2022</p>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
