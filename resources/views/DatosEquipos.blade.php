@@ -61,7 +61,8 @@
                            {{$equipo->semestre3}}<br>
                            {{$equipo->semestre4}}<br>
                            {{$equipo->semestre5}}
-                           </td>                      
+                           </td>
+                           <td>{{$equipo->url_kardex}}</td>                       
                            </tr>
                            @endforeach
                        </tbody>

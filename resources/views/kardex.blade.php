@@ -43,8 +43,8 @@
                         <div class="antialiased">
                             <p>Antes de capturar los datos, te invitamos a descargar la carta compromiso la cual es un requisito 
                             para poder participar, por lo cual podrás descargar en el siguiente botón.</p>
-                            <a download="CARTA COMPROMISO.pdf" href="{{ route('descargar') }}">Descargar carta compromiso</a>
-                            <p>Es indispensable que la carta compromiso este firmada por los participantes y sea escaneada junto con los 
+                            <a class="btn btn-primary" download="CARTA COMPROMISO.pdf" href="{{ route('descargar') }}">Descargar carta compromiso</a>
+                            <br><p>Es indispensable que la carta compromiso este firmada por los participantes y sea escaneada junto con los 
                             kardex de cada participante en un único archivo PDF.</p>
 
                             <form action="/guardar"  method="post" role="form" enctype="multipart/form-data">
@@ -186,7 +186,7 @@
                                             <input name="semestre4" type="text" class="form-control" placeholder="Semestre" value="{{old('semestre4')}}">
                                             <input name="carrera4" type="text" class="form-control" placeholder="Carrera" value="{{old('carrera4')}}">
                                             <input name="cu4" type="text" class="form-control" placeholder="Centro universitario" value="{{old('cu4')}}">
-                                            <input name="telefono4" type="text" class="form-control"placeholder="Telefono" value="{{old('telefono4')}}">  
+                                            <input name="telefono4" type="text" class="form-control"placeholder="Telefono" value="{{old ('telefono4')}}">  
                                             @error('telefono4')
                                             <p style="color:#FF0000";>{{ $message }}</p>
                                             @enderror

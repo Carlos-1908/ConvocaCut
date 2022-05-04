@@ -12,17 +12,13 @@ Route::get('/kardex', [App\Http\Controllers\PdfController::class, 'kardex'])->na
 Route::post('/guardar', [App\Http\Controllers\PdfController::class, 'mguardar'])->name('guardar');
 Route::get('/descargar', [App\Http\Controllers\PdfController::class, 'descargar'])->name('descargar');
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth']);
-Route::resource('/requisitos', App\Http\Controllers\RequisitoController::class)->middleware(['auth']);
-<<<<<<< HEAD
 Route::get('/DatosEquipos', [App\Http\Controllers\IntegrantesController::class, 'index'])->name('DatosEquipos');
-=======
 
 Route::view('/Streaming', 'Streaming')->name('Streaming');
 
 Route::get('/esperaRevReq', function () {
     return view('esperaRevReq');
 });
->>>>>>> f65b9d69c9f07f4ff61f4fc847f2c3246de5a18d
 
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth', 'verified']);
 
