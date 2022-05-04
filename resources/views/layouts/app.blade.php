@@ -32,6 +32,7 @@
                     <!-- Left Side Of Navbar -->
                     @if (auth::check())
                     <ul class="navbar-nav me-auto">
+<<<<<<< HEAD
 
                         @if(Auth::user()->rol == "profe")
                             <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
@@ -41,6 +42,18 @@
                         @endif
                     </ul>
                     @endif
+=======
+                    @if (auth::check() && Auth::user()->rol==1)
+                                
+                                
+                    @endif
+                    
+                    @if (auth::check() && Auth::user()->rol==0)
+                    
+                    @endif
+                    
+                </ul>
+>>>>>>> 830bb3f98f963f6cde5c92d70bb445acc956a776
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

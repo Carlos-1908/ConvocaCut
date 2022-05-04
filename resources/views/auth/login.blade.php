@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email del Representante') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -62,6 +62,9 @@
                                         {{ __('Olvidaste tu Contraseña?') }}
                                     </a>
                                 @endif
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('Aun no te registras? Hazlo aqui!') }}
+                                </a>
                             </div>
                         </div>
                     </form>

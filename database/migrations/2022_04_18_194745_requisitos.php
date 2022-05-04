@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('convocatoria');
             $table->string('usuario');
             $table->string('requisitos');
-            
+            $table->timestamps();
         });
 
 
