@@ -54,7 +54,7 @@
                                 <div class="form-group row">
                                     <label for="rep" class="col-sm-2 col-form-label"></label>
                                     <div class="col-sm-5">
-                                        <input name="nombre_del_equipo" type="text" class="form-control"  placeholder="Nombre de equipo" value="{{old('nombre_del_equipo')}}">
+                                        <input name="nombre_del_equipo" type="text" class="form-control" value="{{ Auth::user()->name }}">
                                         @error('nombre_del_equipo')
                                         <p style="color:#FF0000";>{{ $message }}</p>
                                         @enderror
@@ -224,8 +224,8 @@
                                     @enderror
                                 </div><br>
 
-                                <input type="submit" value="Enviar datos">
-                                <input type="reset" value="Borrar datos">
+                                <input type="submit" class="btn btn-primary" value="Enviar datos">
+                                <input type="reset" class="btn btn-primary" value="Borrar datos">
                             </form>        
                         </div>
                     </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Integrantes;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class PdfController extends Controller
 {
@@ -11,9 +13,11 @@ class PdfController extends Controller
         return view('kardex');
     }
 
-    public function mguardar(Request $request){
-        //dd($request->all());
+    public function listo(){ 
+        return view('registroListo');
+    }
 
+    public function mguardar(Request $request){
         request()->validate(Integrantes::$rules);
 
         if($request->hasfile("Kardex")){
@@ -31,12 +35,27 @@ class PdfController extends Controller
                     ->with('warning', 'El archivo debe ser pdf');
             }
         }  
-        return redirect()->route('kardex')
-            ->with('success', 'Se han enviado los datos');   
+        return redirect()->route('registroListo');
     }
 
     public function descargar(){
         $file = public_path(). "/archivos/Carta compromiso.pdf";   
         return response()->download($file);
+    }
+
+    /*public function index(Request $request)
+    {
+        $nombre = $request->input('nombre_del_equipo');
+        $Generar = DB::table('integrantes')->where('nombre_del_equipo', 'like', '%'.$nombre.'%')->get();
+        return view('generarPdf',array('Generar' => $Generar));
+    }*/
+    public function pdf(Request $request){
+        //$Generar = DB::table('integrantes')->get();
+        $nombre = $request->input('nombre_del_equipo');
+        $Generar = DB::table('integrantes')->where('nombre_del_equipo', 'like', '%'.$nombre.'%')->get();
+        $pdf = App::make("dompdf.wrapper"); 
+        $pdf->loadView("generarPdf", ['Generar'=>$Generar]);
+        //return $pdf->stream();
+        return $pdf->download("mi_equipo.pdf");
     }
 }

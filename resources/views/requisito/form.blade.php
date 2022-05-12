@@ -8,17 +8,19 @@
         </div>
         <div class="form-group">
             {{ Form::label('Nombre del Equipo') }}
-            {{ Form::text('usuario', $requisito->usuario, ['class' => 'form-control' . ($errors->has('usuario') ? ' is-invalid' : ''), 'placeholder' => 'Nombre del Equipo']) }}
+            {{ Form::text('usuario',  Auth::user()->name,  ['class' => 'form-control' . ($errors->has('usuario') ? ' is-invalid' : '')], $requisito->usuario) }}
             {!! $errors->first('usuario', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        
         <div class="form-group">
-            {{ Form::label('Requisitos a Enviar') }}
+            {{ Form::label('Subir video de requisito') }}<br>
+            <a href="https://www.youtube.com/watch?v=gpJqaI61aB8" target="_blank">Tutorial para subir link privado</a>
             {{ Form::textarea('requisitos', $requisito->requisitos, ['class' => 'form-control' . ($errors->has('requisitos') ? ' is-invalid' : ''), 'placeholder' => 'Requisitos']) }}
             {!! $errors->first('requisitos', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <br>
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>

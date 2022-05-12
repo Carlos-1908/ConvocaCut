@@ -6,15 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Registro') }}</div>
-
+                <div align="center"><img src="../../../assets/CUT.png" alt="Logo cutonala" width="300" height="100"></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div>
                             <h3 class="text-center">{{ __('Solo debe registrarse una cuenta por equipo') }}<br></h3>
-                            <h3><br></h3>
-                        </div>
 
+                        </div>
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre del Equipo') }}</label>
 

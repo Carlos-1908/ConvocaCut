@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Convocatoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class ConvocatoriaController
@@ -16,11 +17,16 @@ class ConvocatoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $convocatorias = Convocatoria::paginate();
-
-        return view('convocatoria.index', compact('convocatorias'))
+        $texto =trim ($request -> get ('texto'));
+        $convocatorias = DB::table('convocatorias') -> select ('id','nombre','descripcion','departamento','email_Dudas','telefono_Dudas','requisitos','fecha_de_Registro','fecha_de_Revision','fecha_de_Emision_de_Constancias','fecha_de_Envio_de_Proyecto','fecha_de_Publicacion_de_Resutados')
+        -> where ('nombre', 'LIKE','%'.$texto.'%')
+        -> orWhere ('id', 'LIKE','%'.$texto.'%')
+        -> orWhere('fecha_de_Registro', 'LIKE','%'.$texto.'%')
+        -> orderBy ('id', 'asc')
+        -> paginate (10);
+        return view('convocatoria.index', compact('convocatorias', 'texto'))
             ->with('i', (request()->input('page', 1) - 1) * $convocatorias->perPage());
     }
 

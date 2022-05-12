@@ -7,6 +7,11 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
+        <div class = " colx1-12 ">
+            <form action="{{route('convocatorias.index')}}" method = "get">
+                <input type="text" name = "texto" value="{{$texto}}">
+                <input type="submit" class="btn btn-primary"  value= "Buscar">
+            </form>
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -52,9 +57,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if (count($convocatorias)<=0)
+                                        <tr>
+                                            <td colspan="11">
+                                                No hay resultados
+                                            </td>
+                                        </tr>
+                                    @else
                                     @foreach ($convocatorias as $convocatoria)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td>{{ $convocatoria->id }}</td>
                                             
 											<td>{{ $convocatoria->nombre }}</td>
 											<td>{{ $convocatoria->descripcion }}</td>
@@ -70,17 +82,19 @@
 
                                             <td>
                                                 <form action="{{ route('convocatorias.destroy',$convocatoria->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('convocatorias.show',$convocatoria->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-primary" href="{{ route('convocatorias.show',$convocatoria->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('convocatorias.edit',$convocatoria->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
+                                                    <!--<button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>-->
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
+                                    @endif
                                 </tbody>
                             </table>
+                            {{$convocatorias->links()}}
                         </div>
                     </div>
                 </div>

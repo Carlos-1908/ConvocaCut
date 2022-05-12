@@ -29,23 +29,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    @if (auth::check())
-                    <ul class="navbar-nav me-auto">
-<<<<<<< HEAD
-
-                        @if(Auth::user()->rol == "profe")
-                            <a class="nav-link" href="{{ route('convocatorias.index') }}">{{ __('Convocatorias') }}</a>
-                        @endif
-                        @if(Auth::user()->rol != "profe")
-                            <a class="nav-link" href="{{ route('kardex') }}">{{ __('Subir documentos') }}</a>
-                        @endif
-                    </ul>
-                    @endif
-=======
                     @if (auth::check() && Auth::user()->rol==1)
-                                
-                                
+                    <ul class="navbar-nav me-auto">
+                        <a class="nav-link" href="{{ route('DatosEquipos') }}">{{ __('Informacion equipos') }}</a>
+                    </ul>               
                     @endif
                     
                     @if (auth::check() && Auth::user()->rol==0)
@@ -53,7 +40,6 @@
                     @endif
                     
                 </ul>
->>>>>>> 830bb3f98f963f6cde5c92d70bb445acc956a776
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
