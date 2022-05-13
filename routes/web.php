@@ -17,6 +17,7 @@ Route::get('/descargar', [App\Http\Controllers\PdfController::class, 'descargar'
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth']);
 Route::get('/DatosEquipos', [App\Http\Controllers\IntegrantesController::class, 'index'])->name('DatosEquipos');
 Route::resource('/requisitos', App\Http\Controllers\RequisitoController::class)->middleware(['auth']);
+Route::resource('/estatus', App\Http\Controllers\estatusController::class)->middleware(['auth']);
 Route::get('/GenerarPdf', [App\Http\Controllers\PdfController::class, 'pdf'])->name('GenerarPdf')->middleware(['auth']);
 
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth', 'verified']);
