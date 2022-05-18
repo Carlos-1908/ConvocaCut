@@ -15,13 +15,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">Centro Universitario de Tonala</a>
+                <a class="navbar-brand" href="#page-top"><img src="../../../assets/CUT.png" alt="Logo cutonala" width="140" height="50"></a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('login') }}">Iniciar Sesion</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('register') }}">Registrarse</a></li>
                        
                     </ul>
                 </div>
@@ -31,7 +31,7 @@
         
         
         <!-- Header-->
-        <header class="bg-primary bg-gradient text-white">
+        <header class="bg-primary  text-white">
             <div class="container px-4 text-center">
                 <h1 class="fw-bolder">ConvocaCut</h1>
                 <p class="lead">El Departamento de Emprendimiento, Comercio y Empresa a través del CReCE Tonalá invita a las y los estudiantes de pregrado del CUTonalá a inscribir proyectos de emprendimiento para ser incubados e impulsar su desarrollo por medio de un curso y asesorías empresariales como parte del proceso de incubación.</p>

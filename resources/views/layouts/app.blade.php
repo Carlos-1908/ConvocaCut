@@ -19,10 +19,10 @@
     </head>
     <body class="font-sans antialiased">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'ConvocaCut') }}
+                    <img src="../../../assets/CUT.png" alt="Logo cutonala" width="125" height="40">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     @if (auth::check() && Auth::user()->rol==1)
                     <ul class="navbar-nav me-auto">
-                        <a class="nav-link" href="{{ route('DatosEquipos') }}">{{ __('Informacion equipos') }}</a>
+                        <a class="nav-link text-white" href="{{ route('DatosEquipos') }}">{{ __('Informacion equipos') }}</a>
                     </ul>               
                     @endif
                     
@@ -46,24 +46,24 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                         
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if(Auth::user()->rol == 1)
-                                    <a class="dropdown-item" href="{{route('dashboardP')}}">Administrador</a>
+                                    <a class="dropdown-item text-white" href="{{route('dashboardP')}}">Administrador</a>
                                     @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
