@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('fecha_de_Emision_de_Constancias');
             $table->string('fecha_de_Envio_de_Proyecto');
             $table->string('fecha_de_Publicacion_de_Resutados'); 
+            $table->integer('estatus')->default(0);
             $table->timestamps();
         });
     }

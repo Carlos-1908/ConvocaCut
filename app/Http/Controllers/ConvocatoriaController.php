@@ -20,7 +20,7 @@ class ConvocatoriaController extends Controller
     public function index(Request $request)
     {
         $texto =trim ($request -> get ('texto'));
-        $convocatorias = DB::table('convocatorias') -> select ('id','nombre','descripcion','departamento','email_Dudas','telefono_Dudas','requisitos','fecha_de_Registro','fecha_de_Revision','fecha_de_Emision_de_Constancias','fecha_de_Envio_de_Proyecto','fecha_de_Publicacion_de_Resutados')
+        $convocatorias = DB::table('convocatorias') -> select ('id','nombre','descripcion','departamento','email_Dudas','telefono_Dudas','requisitos','fecha_de_Registro','fecha_de_Revision','fecha_de_Emision_de_Constancias','fecha_de_Envio_de_Proyecto','fecha_de_Publicacion_de_Resutados', 'estatus')
         -> where ('nombre', 'LIKE','%'.$texto.'%')
         -> orWhere ('id', 'LIKE','%'.$texto.'%')
         -> orWhere('fecha_de_Registro', 'LIKE','%'.$texto.'%')
@@ -112,4 +112,6 @@ class ConvocatoriaController extends Controller
         return redirect()->route('convocatorias.index')
             ->with('success', 'Convocatoria eliminada correctamente');
     }
+
+        
 }

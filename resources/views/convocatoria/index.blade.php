@@ -79,14 +79,28 @@
 											<td>{{ $convocatoria->fecha_de_Emision_de_Constancias }}</td>
 											<td>{{ $convocatoria->fecha_de_Envio_de_Proyecto }}</td>
 											<td>{{ $convocatoria->fecha_de_Publicacion_de_Resutados }}</td>
-
                                             <td>
-                                                <form action="{{ route('convocatorias.destroy',$convocatoria->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary" href="{{ route('convocatorias.show',$convocatoria->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('convocatorias.edit',$convocatoria->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <!--<button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>-->
+                                                    
+                                                    <form action="{{route('estatus.update',$convocatoria->id)}}" method="post">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <label for="" class="" style=" margin-top: 3%;">Estado: </label>
+                                                        @if($convocatoria->estatus == 0)
+                                                        <select name="estado" id="" style=" margin-bottom: 2%;">
+                                                            <option value="0" selected>Desactivo</option>
+                                                            <option value="1">Activo</option>
+                                                        </select>
+                                                        @elseif($convocatoria->estatus == 1)
+                                                        <select name="estado" id="" style=" margin-bottom: 3%;">
+                                                            <option value="0">Desactivo</option>
+                                                            <option value="1" selected>Activo</option>
+                                                            </select>
+                                                        @endif
+
+                                                    <button type="submit"  class="btn btn-warning btn-sm">Actualizar Estado</button>
+                                                    
                                                 </form>
                                             </td>
                                         </tr>
