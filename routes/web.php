@@ -18,8 +18,9 @@ Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::c
 Route::get('/DatosEquipos', [App\Http\Controllers\IntegrantesController::class, 'index'])->name('DatosEquipos');
 Route::resource('/requisitos', App\Http\Controllers\RequisitoController::class)->middleware(['auth']);
 Route::resource('/estatus', App\Http\Controllers\estatusController::class)->middleware(['auth']);
+Route::resource('/calificacion', App\Http\Controllers\ConvocasController::class)->middleware(['auth']);
 Route::get('/GenerarPdf', [App\Http\Controllers\PdfController::class, 'pdf'])->name('GenerarPdf')->middleware(['auth']);
-
+Route::get('/calificar', [App\Http\Controllers\ConvocasController::class, 'calificar'])->name('calificar')->middleware(['auth']);
 Route::resource('/convocatorias', App\Http\Controllers\ConvocatoriaController::class)->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', function () {

@@ -32,6 +32,7 @@
                     @if (auth::check() && Auth::user()->rol==1)
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link text-white" href="{{ route('DatosEquipos') }}">{{ __('Informacion equipos') }}</a>
+                        <a class="nav-link text-white" href="{{ route('calificar') }}">{{ __('Calificar equipos') }}</a>
                     </ul>               
                     @endif
                     
@@ -62,10 +63,7 @@
                                 </a>
                         
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    @if(Auth::user()->rol == 1)
-                                    <a class="dropdown-item text-white" href="{{route('dashboardP')}}">Administrador</a>
-                                    @endif
-
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

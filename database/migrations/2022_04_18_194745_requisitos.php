@@ -17,8 +17,9 @@ return new class extends Migration
         Schema::create('requisitos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('convocatoria');
-            $table->string('usuario');
+            $table->string('usuario') ->unique();
             $table->string('requisitos');
+            $table->string('calificacion');
             $table->timestamps();
         });
 
