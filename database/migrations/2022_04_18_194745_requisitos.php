@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('convocatoria');
             $table->string('usuario') ->unique();
             $table->string('requisitos');
-            $table->string('calificacion');
+            $table->string('calificacion')->nullable();
             $table->timestamps();
         });
 
